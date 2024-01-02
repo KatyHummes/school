@@ -29,4 +29,9 @@ Route::post('auth', [AuthController::class, 'auth'])->name('auth');
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('dashboard', [UserController::class,'dashboard'])->name('dashboard');
     Route::post('logout', [AuthController::class,'logout'])->name('logout');
+    Route::get('profile', [UserController::class, 'profile'])->name('profile');
+    Route::put('user-update', [UserController::class, 'userUpdate'])->name('user.update');
+    Route::post('profile-create', [UserController::class, 'profileCreate'])->name('profile.create');
+    Route::put('profile-update', [UserController::class, 'profileUpdate'])->name('profile.update');
+
 });
